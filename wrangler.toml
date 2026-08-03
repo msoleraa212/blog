@@ -1,8 +1,16 @@
 # Worker de assets estáticos: `wrangler deploy` sube dist/ tal cual, sin código.
 # El build de Cloudflare solo compila lo commiteado; el sync corre siempre en local.
-name = "blog"
+name = "soleratv"
 compatibility_date = "2026-07-11"
 
 [assets]
 directory = "./dist"
 not_found_handling = "404-page"
+
+[[routes]]
+pattern = "soleratv.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.soleratv.com"
+custom_domain = true

@@ -8,31 +8,30 @@ import { SITE } from '../site';
 const posts = await getPublishedPosts();
 const allTags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
 
-// figlet Standard, dos bloques: "santiago" y, debajo, "ascii" alineado a su
+// figlet Standard, dos bloques: "solera" y, debajo, "tv" alineado a su
 // borde derecho (el padding se calcula, no se ajusta a ojo).
-const santiagoLines = [
-  '                  _   _',
-  '  ___  __ _ _ __ | |_(_) __ _  __ _  ___',
-  " / __|/ _` | '_ \\| __| |/ _` |/ _` |/ _ \\",
-  ' \\__ \\ (_| | | | | |_| | (_| | (_| | (_) |',
-  ' |___/\\__,_|_| |_|\\__|_|\\__,_|\\__, |\\___/',
-  '                              |___/',
+const soleraLines = [
+  '            _',
+  '  ___  ___ | | ___ _ __ __ _',
+  " / __|/ _ \\| |/ _ \\ '__/ _` |",
+  ' \\__ \\ (_) | |  __/ | | (_| |',
+  ' |___/\\___/|_|\\___|_|  \\__,_|',
 ];
-const asciiLines = [
-  '                 _ _',
-  '   __ _ ___  ___(_|_)',
-  '  / _` / __|/ __| | |',
-  ' | (_| \\__ \\ (__| | |',
-  '  \\__,_|___/\\___|_|_|',
+const tvLines = [
+  '  _',
+  ' | |___   __',
+  ' | __\\ \\ / /',
+  ' | |_ \\ V /',
+  '  \\__| \\_/',
 ];
-const widthSantiago = Math.max(...santiagoLines.map((line) => line.length));
-const widthAscii = Math.max(...asciiLines.map((line) => line.length));
-const pad = ' '.repeat(Math.max(0, widthSantiago - widthAscii));
+const widthSolera = Math.max(...soleraLines.map((line) => line.length));
+const widthTv = Math.max(...tvLines.map((line) => line.length));
+const pad = ' '.repeat(Math.max(0, widthSolera - widthTv));
 // Una línea = un span en bloque: así cada una puede "imprimirse" escalonada
 // (animación .masthead-line; --i marca el turno).
 const mastheadLines = [
-  ...santiagoLines.map((line) => ({ line, accent: false })),
-  ...asciiLines.map((line) => ({ line: pad + line, accent: true })),
+  ...soleraLines.map((line) => ({ line, accent: false })),
+  ...tvLines.map((line) => ({ line: pad + line, accent: true })),
 ];
 ---
 

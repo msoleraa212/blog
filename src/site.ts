@@ -1,7 +1,7 @@
 // Identidad del sitio. Todo lo editable en un solo lugar.
 export const SITE = {
-  title: 'santiagoascii',
+  title: 'soleratv',
   description: 'Ensayos y bitácoras de lectura.',
-  url: 'https://santiagoascii.com',
-  author: 'Santiago',
+  url: 'https://soleratv.com',
+  author: 'Solera',
 } as const;

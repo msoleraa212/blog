@@ -1,4 +1,4 @@
-# santiagoascii.com
+# soleratv.com
 
 Blog personal en [Astro](https://astro.build). El contenido vive en un vault de
 Obsidian (repo privado, separado); este repo solo contiene el sitio y el
@@ -45,12 +45,13 @@ Una nota con `publish: true` y frontmatter inválido aborta el sync sin
 escribir nada. Una nota inválida en `src/content/posts/` rompe el build
 (schema estricto en `src/content.config.ts`).
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers)
 
-Proyecto conectado al repo por integración git. Configuración de build:
+Proyecto conectado al repo por integración git. Configuración:
 
 - **Build command**: `pnpm build`
-- **Output**: `dist` (también declarado en `wrangler.toml`)
+- **Deploy command**: `npx wrangler deploy`
+- **Output**: `dist` (declarado en `wrangler.toml`)
 
 La identidad del sitio (título, descripción, dominio) se edita en `src/site.ts`;
 los tokens de diseño en `src/styles/global.css`.
