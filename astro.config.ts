@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://santiagoascii.com',
+  site:'https://soleratv.com',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
